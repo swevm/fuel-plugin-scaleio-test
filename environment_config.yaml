@@ -1,0 +1,43 @@
+attributes:
+  scaleio_repo:
+    value: ''
+    label: 'ScaleIO repo URL'
+    description: 'Repo URL for ScaleIO software'
+    weight: 25
+    type: "text"
+  protection_domain:
+    value: ''
+    label: 'ScaleIO protection domain'
+    description: 'Protection domain for ScaleIO'
+    weight: 35
+    type: "text"
+  storage_pool_1:
+    value: ''
+    label: 'ScaleIO storage pool 1'
+    description: 'First storage pool for ScaleIO'
+    weight: 45
+    type: "text"
+  drive_list_1:
+    value: ''
+    label: 'Driver labels for the first storage pool'
+    description: 'Comma separated list of driver labels for the first storage pool'
+    weight: 50
+    type: "text"
+  storage_pool_2:
+    value: ''
+    label: 'ScaleIO storage pool 2'
+    description: 'Second storage pool for ScaleIO'
+    weight: 55
+    type: "text"
+  drive_list_2:
+    value: ''
+    label: 'Driver labels for the second storage pool'
+    description: 'Comma separated list of driver labels for the second storage pool'
+    weight: 60
+    type: "text"
+  fault_sets:
+    value: ''
+    label: 'Fault sets list'
+    description: 'Comma separated list of fault sets'
+    weight: 60
+    type: "text"

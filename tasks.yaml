@@ -1,0 +1,39 @@
+# This tasks will be applied on controller nodes,
+# here you can also specify several roles, for example
+# ['cinder', 'compute'] will be applied only on
+# cinder and compute nodes
+#Install ScaleIO sds
+- role: ['scaleio']
+  stage: post_deployment
+  type: puppet
+  parameters:
+    puppet_manifest: install_scaleio_sds.pp
+    puppet_modules: puppet/:/etc/puppet/modules
+    timeout: 600
+
+#Install ScaleIO cluster
+- role: ['compute']
+  stage: post_deployment
+  type: puppet
+  parameters:
+    puppet_manifest: install_scaleio_compute.pp
+    puppet_modules: puppet/:/etc/puppet/modules
+    timeout: 600
+
+#Install ScaleIO on controller
+- role: ['controller']
+  stage: post_deployment
+  type: puppet
+  parameters:
+    puppet_manifest: install_scaleio_controller.pp
+    puppet_modules: puppet/:/etc/puppet/modules
+    timeout: 600
+
+#Remove ScaleIO repo from all servers
+- role: '*'
+  stage: post_deployment
+  type: puppet
+  parameters:
+    puppet_manifest: remove_scaleio_repo.pp
+    puppet_modules: puppet/:/etc/puppet/modules
+    timeout: 600
